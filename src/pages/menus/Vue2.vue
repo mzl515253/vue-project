@@ -148,21 +148,6 @@ export default {
       ],
     };
   },
-  methods: {
-    handleClick: function () {
-      console.log("按钮被点击");
-    },
-    handleEvent: function (data) {
-      console.log("接收到事件数据:", data);
-    },
-  },
-  computed: {
-  },
-  watch: {
-    message: function (newVal, oldVal) {
-      console.log("消息变化:", newVal, oldVal);
-    },
-  },
   components: {
     VueInstance,
     VueResponsive,
@@ -187,7 +172,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .vue2-knowledge {
   max-width: 1500px;
   margin: 0 auto;

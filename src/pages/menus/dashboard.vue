@@ -3,9 +3,7 @@
 </template>
 
 <script setup lang='ts'>
-import { reactive, toRefs } from 'vue'
-let data= reactive({})
-let {}= toRefs(data)
+// 占位页面，待实现
 </script>
 
 <style lang='scss' scoped>

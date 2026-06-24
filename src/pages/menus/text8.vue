@@ -1,5 +1,5 @@
 <template>
-  <div  class="8text-knowledge" >
+  <div  class="text8-knowledge" >
   <el-tabs v-model="activeTab" type="border-card" class="knowledge-tabs">
       <el-tab-pane  
       v-for="tabPane in tabPaneList" 
@@ -20,7 +20,7 @@ import TS_8text from '@/components/8TEXT/TS_8text.vue'
 
 
 
-let data= reactive({
+const data= reactive({
   activeTab: 'tab1',
   tabPaneList:[
     {
@@ -41,7 +41,7 @@ let data= reactive({
   ]
 
 })
-let {activeTab,tabPaneList}= toRefs(data)
+const {activeTab,tabPaneList}= toRefs(data)
 </script>
 
 <style lang='scss' scoped>

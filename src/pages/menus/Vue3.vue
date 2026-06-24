@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, watchEffect } from 'vue'
+import { ref, reactive } from 'vue'
 import Vue3CompositionApi from '@/components/Vue3NoteBook/Vue3CompositionApi.vue';
 import Vue3Responsive from '@/components/Vue3NoteBook/Vue3Responsive.vue';
 import Vue3SetupSyntacticSugar from '@/components/Vue3NoteBook/Vue3SetupSyntacticSugar.vue';
@@ -27,12 +27,6 @@ import Vue3ResPonCache from '@/components/Vue3NoteBook/Vue3ResPonCache.vue';
 import Vue3Fragment from '@/components/Vue3NoteBook/Vue3Fragment.vue';
 import Vue3Router from '@/components/Vue3NoteBook/Vue3Router.vue';
 import Vue3Directives from '@/components/Vue3NoteBook/Vue3Directives.vue';
-
-import {storeToRefs} from 'pinia'
-import { useResApiInteractionStore } from '@/stores/resApiInteraction'  
-
-const resApiInteractionStore = useResApiInteractionStore()
-const {NameApiKey, NameToolKey} = storeToRefs(resApiInteractionStore)
 
 const activeTab = ref('composition-api')
 const tabPaneList= reactive([
@@ -99,13 +93,6 @@ const tabPaneList= reactive([
     name: 'fragment',
   },
 ])
-  watchEffect(() => {
-    if(NameApiKey.value || NameToolKey.value) {
-      activeTab.value = 'reactive-api'
-    }else{
-      activeTab.value = 'composition-api'
-    }
-  })
 </script>
 
 <style lang="scss" scoped>

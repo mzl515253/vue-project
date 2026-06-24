@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
 <div>
   <keep-alive>
@@ -10,15 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import { onActivated,onDeactivated} from "vue";
-
-
-onActivated(() => {
-  console.log('组件被激活了')
-})
-onDeactivated(() => {
-  console.log('组件被停用了')
-})  
+// App.vue 是根组件，<keep-alive> 包裹的是其子组件 <router-view>，
+// 而非 App 自身，因此 onActivated/onDeactivated 不会触发，无需引入。
 </script>
 
 <style  lang="scss" scoped>
@@ -26,7 +17,6 @@ onDeactivated(() => {
  * {
   margin: 0px;
   padding: 0px;
-  background: red;
 }
-
+ 
 </style>
